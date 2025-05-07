@@ -168,6 +168,12 @@ class Target:
         self.metadata.language = path_data.get("language")
         self.metadata.group = path_data.get("release_group")
         self.metadata.container = file_path.suffix or None
+        self.metadata.resolution = path_data.get("screen_size")
+        self.metadata.video_codec = path_data.get("video_codec")
+        self.metadata.source = path_data.get("source")
+        self.metadata.audio_codec = path_data.get("audio_codec")
+        self.metadata.audio_channels = path_data.get("audio_channels")
+        self.metadata.other = path_data.get("other")
         if "date" in path_data:
             self.metadata.date = path_data.get("date")
         elif "year" in path_data:
@@ -183,6 +189,7 @@ class Target:
             pass
         if isinstance(self.metadata, MetadataMovie):
             self.metadata.name = path_data.get("title")
+            self.metadata.edition = path_data.get("edition")
         elif isinstance(self.metadata, MetadataEpisode):
             self.metadata.episode = path_data.get("episode")
             self.metadata.season = path_data.get("season")
