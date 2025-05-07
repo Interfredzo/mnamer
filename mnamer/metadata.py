@@ -44,7 +44,6 @@ class Metadata:
     quality: str | None = None
     synopsis: str | None = None
     original_filename: str | None = None
-    other: str | None = None
 
     @classmethod
     def to_media_type(cls) -> MediaType:
@@ -64,7 +63,6 @@ class Metadata:
             "media": MediaType,
             "quality": str.lower,
             "synopsis": str.capitalize,
-            "other": str,
         }
         converter: Callable | None = converter_map.get(key)
         if value is not None and converter:
@@ -116,7 +114,6 @@ class MetadataMovie(Metadata):
     date: dt.date | None = None
     id_imdb: str | None = None
     id_tmdb: str | None = None
-    edition: str | None = None
 
     def __post_init__(self):
         if isinstance(self.date, str):
@@ -133,7 +130,6 @@ class MetadataMovie(Metadata):
         converter_map: dict[str, Callable] = {
             "name": fn_pipe(str_replace_slashes, str_title_case),
             "date": parse_date,
-            "edition": str,
         }
         converter: Callable | None = converter_map.get(key)
         if value is not None and converter:
