@@ -1,3 +1,29 @@
+# Changes
+
+The original maintainer doesn't seem t o update this anymore so I merged some pull requests and added new format options.
+I'm no git expert so I tried the best I could.
+
+
+Integrated pull requests:
+  - More date options #307 opened on Feb 8 by xuniversus
+  - Add resolution, codec, and source fields to Metadata dataclass and up… #306 opened on Feb 4 by thekryz
+  - original_filename support #303 opened on Dec 25, 2024 by meitham
+  - Remove too early metadata language definition without try-except block #292 opened on Jan 31, 2024 by HoLuLuLu
+  
+Install with:
+  pipx install 'git+https://github.com/Interfredzo/mnamer'
+
+New Formatting:
+  {resolution}
+  {video_codec}
+  {source}
+  {audio_codec}
+  {audio_channels}
+  {edition}
+  {other}
+
+
+# Original Readme
 [![PyPI](https://img.shields.io/pypi/v/mnamer.svg?style=for-the-badge)](https://pypi.python.org/pypi/mnamer)
 [![Tests](https://img.shields.io/github/actions/workflow/status/jkwill87/mnamer/.github/workflows/push.yml?branch=main&style=for-the-badge&label=Tests)](https://github.com/jkwill87/mnamer/actions/workflows/push.yml?query=branch:main)
 [![Coverage](https://img.shields.io/codecov/c/github/jkwill87/mnamer/main.svg?style=for-the-badge)](https://codecov.io/gh/jkwill87/mnamer)
