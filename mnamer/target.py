@@ -165,7 +165,6 @@ class Target:
             )
             or None
         )
-        self.metadata.language = path_data.get("language")
         self.metadata.group = path_data.get("release_group")
         self.metadata.container = file_path.suffix or None
         self.metadata.resolution = path_data.get("screen_size")
@@ -178,11 +177,10 @@ class Target:
             self.metadata.date = path_data.get("date")
         elif "year" in path_data:
             self.metadata.date = "{}-01-01".format(path_data.get("year"))
-        if not self.metadata.language:
-            try:
-                self.metadata.language = path_data.get("language")
-            except MnamerException:
-                pass
+        try:
+            self.metadata.language = path_data.get("language")
+        except MnamerException:
+            pass
         try:
             self.metadata.language_sub = path_data.get("subtitle_language")
         except MnamerException:
