@@ -173,6 +173,7 @@ class Target:
         self.metadata.source = path_data.get("source")
         self.metadata.audio_codec = path_data.get("audio_codec")
         self.metadata.audio_channels = path_data.get("audio_channels")
+        self.metadata.other = path_data.get("other")
         if "date" in path_data:
             self.metadata.date = path_data.get("date")
         elif "year" in path_data:
@@ -188,6 +189,7 @@ class Target:
             pass
         if isinstance(self.metadata, MetadataMovie):
             self.metadata.name = path_data.get("title")
+            self.metadata.edition = path_data.get("edition")
         elif isinstance(self.metadata, MetadataEpisode):
             self.metadata.episode = path_data.get("episode")
             self.metadata.season = path_data.get("season")
