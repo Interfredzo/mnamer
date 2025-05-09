@@ -11,16 +11,18 @@ Integrated pull requests:
   - Remove too early metadata language definition without try-except block #292 opened on Jan 31, 2024 by HoLuLuLu
   
 Install with:
-  pipx install 'git+https://github.com/Interfredzo/mnamer'
+
+  `$ pipx install 'git+https://github.com/Interfredzo/mnamer'`
 
 New Formatting:
-  {resolution}
-  {video_codec}
-  {source}
-  {audio_codec}
-  {audio_channels}
-  {edition}
-  {other}
+
+  - {resolution}
+  - {video_codec}  
+  - {source}  
+  - {audio_codec}  
+  - {audio_channels}  
+  - {edition}  
+  - {other}
 
 
 # Original Readme
